@@ -3,7 +3,6 @@ package keys;
 import base.BaseTests;
 import org.testng.annotations.Test;
 import pages.KeyPressesPage;
-
 import static org.testng.Assert.assertEquals;
 
 public class KeysTests extends BaseTests {
@@ -22,5 +21,4 @@ public class KeysTests extends BaseTests {
         String inputTextLastKey = keyPressesPage.getInputTextLastKey();
         assertEquals(keyPressesPage.getResult(),"You entered: " + inputTextLastKey);
     }
-
 }

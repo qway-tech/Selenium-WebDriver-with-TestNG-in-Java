@@ -3,7 +3,6 @@ package alerts;
 import base.BaseTests;
 import org.testng.annotations.Test;
 import pages.AlertsPage;
-
 import static org.testng.Assert.assertEquals;
 
 public class AlertTests extends BaseTests {
@@ -20,10 +19,8 @@ public class AlertTests extends BaseTests {
     public void testGetTextFromAlert(){
         AlertsPage alertsPage = homePage.clickJavaScriptAlerts();
         alertsPage.triggerConfirm();
-
         String text = alertsPage.getAlertText();
         alertsPage.dismissAlert();
-
         assertEquals(text, "I am a JS Confirm", "Alert text incorrect");
     }
 
@@ -31,12 +28,9 @@ public class AlertTests extends BaseTests {
     public void testSetInputInAlert(){
         AlertsPage alertsPage = homePage.clickJavaScriptAlerts();
         alertsPage.triggerPrompt();
-
         String text = "Q.Way!";
         alertsPage.setAlertInputText(text);
         alertsPage.acceptAlert();
-
         assertEquals(alertsPage.getResult(), "You entered: " + text, "Results text incorrect");
     }
-
 }

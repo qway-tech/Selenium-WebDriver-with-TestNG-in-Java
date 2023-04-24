@@ -10,6 +10,7 @@ public class KeyPressesPage {
     private By inputField = By.id("target");
     private By resultText = By.id("result");
 
+    // Métodos
     public KeyPressesPage(WebDriver driver){
         this.driver = driver;
     }

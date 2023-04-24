@@ -11,6 +11,7 @@ public class HoversPage {
     private By figureBox = By.className("figure");
     private By captionBox = By.className("figcaption");
 
+    // Métodos
     public HoversPage(WebDriver driver){
         this.driver = driver;
     }
@@ -22,6 +23,7 @@ public class HoversPage {
         return new FigureCaption(figure.findElement(captionBox));
     }
 
+    // Classe interna para representar uma div
     public class  FigureCaption {
         private WebElement captionInstance;
         private By header = By.tagName("h5");
@@ -47,5 +49,4 @@ public class HoversPage {
             return captionInstance.findElement(link).getText();
         }
     }
-
 }
