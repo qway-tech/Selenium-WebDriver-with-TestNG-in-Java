@@ -37,6 +37,16 @@ public class HomePage{
         return new AlertsPage(driver);
     }
 
+    public FileUploadPage clickFileUploadLink(){
+        clickLink("File Upload");
+        return new FileUploadPage(driver);
+    }
+
+    public WysiwygEditorPage clickWysiwygEditor(){
+        clickLink("WYSIWYG Editor");
+        return new WysiwygEditorPage(driver);
+    }
+
     public void clickLink(String text){
         driver.findElement(By.linkText(text)).click();
     }
