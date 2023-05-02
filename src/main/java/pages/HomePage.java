@@ -1,53 +1,20 @@
 package pages;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
-public class HomePage{
-    //Variáveis e Objetos
+public class HomePage {
     private WebDriver driver;
-
-    // Métodos
     public HomePage (WebDriver driver){
         this.driver = driver;
     }
-
-    public LoginPage clickFormAuthenticationLink(){
-        clickLink("Form Authentication");
-        return new LoginPage(driver);
+    public void clickLink(String linkText) {
+        driver.findElement(By.linkText(linkText)).click();
     }
-
-    public DropdownPage clickDropDownLink(){
-        clickLink("Dropdown");
-        return new DropdownPage(driver);
+    public ContextMenu clickFormContextMenu(){
+        clickLink("Context Menu");
+        return new ContextMenu(driver);
     }
-
-    public HoversPage clickHoversLink(){
-        clickLink("Hovers");
-        return new HoversPage(driver);
-    }
-
-    public KeyPressesPage clickKeyPressesLink(){
-        clickLink("Key Presses");
-        return new KeyPressesPage(driver);
-    }
-
-    public AlertsPage clickJavaScriptAlerts(){
-        clickLink("JavaScript Alerts");
-        return new AlertsPage(driver);
-    }
-
-    public FileUploadPage clickFileUploadLink(){
-        clickLink("File Upload");
-        return new FileUploadPage(driver);
-    }
-
-    public WysiwygEditorPage clickWysiwygEditor(){
-        clickLink("WYSIWYG Editor");
-        return new WysiwygEditorPage(driver);
-    }
-
-    public void clickLink(String text){
-        driver.findElement(By.linkText(text)).click();
+    public HorizontalSlider clickFormHorizontalSlider(){
+        clickLink("Horizontal Slider");
+        return new HorizontalSlider(driver);
     }
 }
