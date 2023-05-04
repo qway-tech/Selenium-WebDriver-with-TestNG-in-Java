@@ -11,7 +11,9 @@ public class ContextMenuTests extends BaseTests {
     public void testContextMenu(){
         ContextMenu contextMenu = homePage.clickFormContextMenu();
         contextMenu.clickHotSpot();
+        String textAlert = contextMenu.getAlertText();
         contextMenu.acceptAlert();
+        assertEquals(textAlert,"You selected a context menu", "Results text incorrect");
     }
 
 }
