@@ -17,18 +17,16 @@ public class HorizontalSlider {
         WebElement slider = driver.findElement(sliderContainer);
         slider.click();
     }
-    public void moveSliderRight(int clicks) {
+    
+    public void moveSlider(String direction, int clicks) {
         WebElement slider = driver.findElement(sliderContainer);
         for (int i = 0; i < clicks; i++) {
-            slider.sendKeys(Keys.ARROW_RIGHT);
+            if(direction == "right") {
+                slider.sendKeys(Keys.ARROW_RIGHT);
+            } else if (direction == "left") { slider.sendKeys(Keys.ARROW_LEFT); }
         }
     }
-    public void moveSliderLeft(int clicks) {
-        WebElement slider = driver.findElement(sliderContainer);
-        for (int i = 0; i < clicks; i++) {
-            slider.sendKeys(Keys.ARROW_LEFT);
-        }
-    }
+    
     public String getSliderValue() {
         WebElement rangeElement = driver.findElement(range);
         String text = rangeElement.getText();
