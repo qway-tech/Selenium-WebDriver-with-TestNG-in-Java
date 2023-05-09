@@ -23,7 +23,9 @@ public class HorizontalSlider {
         for (int i = 0; i < clicks; i++) {
             if(direction == "right") {
                 slider.sendKeys(Keys.ARROW_RIGHT);
-            } else if (direction == "left") { slider.sendKeys(Keys.ARROW_LEFT); }
+            } else if (direction == "left") {
+                slider.sendKeys(Keys.ARROW_LEFT);
+            }
         }
     }
     
