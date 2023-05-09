@@ -7,9 +7,9 @@ public class HorizontalSliderTest extends BaseTests {
     @Test
     public void MoveSlider() {
         HorizontalSlider horizontalSlider = homePage.clickFormHorizontalSlider();
-        horizontalSlider.moveSliderRight(3);
+        horizontalSlider.moveSlider("right", 3);
         System.out.println("Slider value Right: " + horizontalSlider.getSliderValue());
-        horizontalSlider.moveSliderLeft(1);
+        horizontalSlider.moveSlider("left", 1);
         System.out.println("Slider value Left: " + horizontalSlider.getSliderValue());
     }
 }
