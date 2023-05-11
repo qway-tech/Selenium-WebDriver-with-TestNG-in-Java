@@ -47,6 +47,16 @@ public class HomePage{
         return new WysiwygEditorPage(driver);
     }
 
+    public DynamicLoadingPage clickDynamicLoadingLink(){
+        clickLink("Dynamic Loading");
+        return new DynamicLoadingPage(driver);
+    }
+
+    public LargeAndDeepDomPage clickLargeAndDeepDom(){
+        clickLink("Large & Deep DOM");
+        return new LargeAndDeepDomPage(driver);
+    }
+
     public void clickLink(String text){
         driver.findElement(By.linkText(text)).click();
     }
