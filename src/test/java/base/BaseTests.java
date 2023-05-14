@@ -1,9 +1,9 @@
 package base;
 
 import com.google.common.io.Files;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
@@ -26,7 +26,15 @@ public class BaseTests {
     private ChromeOptions getChromeOptions(){
         ChromeOptions options = new ChromeOptions();
         options.addArguments("disable-infobars","--remote-allow-origins=*","no-sandbox");
+        options.setHeadless(false);
         return options;
+    }
+
+    private void setCookie(String name, String value){
+        Cookie cookie = new Cookie.Builder(name, value)
+                .domain("the-internet.herokuapp.com")
+                .build();
+        driver.manage().addCookie(cookie);
     }
 
     @BeforeClass
@@ -52,6 +60,7 @@ public class BaseTests {
         String URL = "https://the-internet.herokuapp.com/";
         driver.get(URL);
         homePage = new HomePage(driver);
+        setCookie("qway", "123");
     }
 
     @AfterMethod
